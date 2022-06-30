@@ -5,6 +5,7 @@
     <Snap></Snap>
     <AccentColor></AccentColor>
     <Overscroll></Overscroll>
+    <ColorContrast></ColorContrast>
   </div>
 </template>
 

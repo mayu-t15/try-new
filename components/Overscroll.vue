@@ -1,9 +1,9 @@
 <template>
   <section>
     <h3>overscroll-behavior</h3>
-    <p>○スクロール可能な領域同士が重なっているとき、後のスクロールブロック</p>
-    <p>○</p>
-    <p>○</p>
+    <p>○スクロール可能な領域同士が重なっているとき、後の要素のスクロールが連鎖しないようにしてくれる</p>
+    <p>○手前の要素に指定</p>
+    <p>○overscroll-behavior: contain;</p>
     <div :class="$style.container">
       <div :class="$style.back">
         <p>
@@ -35,6 +35,7 @@ export default Vue.extend({})
   width: 300px;
   overflow-y: scroll;
   background-color: bisque;
+  overscroll-behavior: contain;
 }
 .front {
   position:absolute;
@@ -44,5 +45,6 @@ export default Vue.extend({})
   height: 250px;
   width: 150px;
   background-color: pink;
+  overscroll-behavior: contain;
 }
 </style>

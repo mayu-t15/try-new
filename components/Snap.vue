@@ -47,7 +47,7 @@ export default Vue.extend({})
     flex: 0 0 auto;
     white-space: nowrap;
     // 以下を追加
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     width: 700px;
     height: 200px;
     text-align: center;

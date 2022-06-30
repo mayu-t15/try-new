@@ -9,8 +9,14 @@
       <p>
         ・キーボード操作時: Tabがdialog内部だけを移動するよう制御、Escで閉じる
       </p>
-      <button @click="openModal">! OPEN / CLOSE !</button>
-      <dialog :open="isModalOpen" :class="$style.modal">
+      <p>○Interop 2022</p>
+      <p>https://wpt.fyi/interop-2022</p>
+      <button @click="openModal()">! OPEN !</button>
+      <button>他のボタン</button>
+      <button>他のボタン</button>
+      <button>他のボタン</button>
+      <dialog ref="modal" :class="$style.modal">
+        <button @click="closeModal()">x</button>
         <h2>開いたダイアログ</h2>
         <p>
           コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ
@@ -22,17 +28,22 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
 export default Vue.extend({
   data() {
     return {
-      isModalOpen: false,
+      modal:"",
     }
   },
   methods: {
     openModal() {
-      this.isModalOpen = !this.isModalOpen
-      return this.isModalOpen
+      if (typeof this.$refs.modal !== "undefined") {
+        this.$refs.modal.showModal()
+      }
+    },
+    closeModal() {
+      if (typeof this.$refs.modal !== "undefined") {
+        this.$refs.modal.close()
+      }
     },
   },
 })
